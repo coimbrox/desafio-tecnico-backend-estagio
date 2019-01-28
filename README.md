@@ -38,10 +38,10 @@ Esse metódo deve retirar da fila a pessoa na primeira posição e retorna-la.
 
 ## Se você fizer é um plus
     
-    - Teste unitário
     - Typescript
-    - Documentação
     - Validações como garantir que uma pessoa não vai ser adicionada à fila múltiplas vezes
+    - Documentação
+    - Teste unitário
 
 
 ## Entrega
