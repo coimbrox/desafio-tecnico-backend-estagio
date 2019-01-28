@@ -40,9 +40,13 @@ Esse metódo deve receber um gênero de usuário e retornar uma lista de usuári
 
 Esse metódo deve retirar da fila a pessoa na primeira posição e retorna-la.
 
+## Dica  
+
+    - Para construir a API você pode usar frameworks como Express (https://expressjs.com/pt-br/).
+
 ## Se você fizer é um plus
     
-    - Typescript
+    - Usar Typescript
     - Validações, como garantir que uma pessoa não vai ser adicionada à fila múltiplas vezes
     - Documentação
     - Teste unitário
