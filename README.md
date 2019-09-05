@@ -56,11 +56,13 @@ Esse metódo deve retirar da fila a pessoa na primeira posição e retorna-la.
 
 Ao finalizar, nos envie os seguintes itens:
     
-    - Acesso ao repositório (se o repositório for privado no Github, dar permissão de acesso para @dygufa);
+    - Acesso ao repositório (se o repositório for privado no Github, dar permissão de acesso para @joshuapassos);
     - Exemplo de requisição de criação de usuário;
     - Exemplo de requisição de adição à fila;
     - Exemplo de requisição de ver fila;
     - Exemplo de requisição de retirar primeiro da fila;
+    - Exemplo de requisição de filtrar fila;
+    - Exemplo de requisição de buscar usuário na fila.
 
 Os exemplos de requisição devem ser enviados no formato:  nome do endpoint, metódo HTTP referente à chamada e body. Também é possível utilizar uma Postman (https://www.getpostman.com/) collection para organizar os exemplos, porém não é um requisito.
 
