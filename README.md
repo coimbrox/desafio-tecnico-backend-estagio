@@ -56,7 +56,7 @@ Esse metódo deve retirar da fila a pessoa na primeira posição e retorna-la.
 
 Ao finalizar, nos envie os seguintes itens:
     
-    - Acesso ao repositório (se o repositório for privado no Github, dar permissão de acesso para @joshuapassos);
+    - Acesso ao repositório (se o repositório for privado no Github, dar permissão de acesso para @backend-psel. Se o repositório for privado no GitLab, dar permissão de acesso para @backend.psel). O link do repositório deve ser enviado através da plataforma da Gupy, no mesmo local onde você recebeu as instruções para o desafio;
     - Exemplo de requisição de criação de usuário;
     - Exemplo de requisição de adição à fila;
     - Exemplo de requisição de ver fila;
