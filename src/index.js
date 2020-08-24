@@ -17,7 +17,7 @@ app.post('/register', (request, response) => {
 
   const user = { id: uuid(), name, email, gender }
 
-  users.push(user);
+  userss.push(user);
 
   return response.json(users);
 });
@@ -27,9 +27,9 @@ app.put('/register/:id', (request, response) => {
   const { id } = request.params;
   const { name, email, gender } = request.body;
 
-  const userIndex = user.findIndex(user => user.id === id);
+  const userEmail = user.findEmail(user => user.email === email);
 
-  if (userIndex < 0) {
+  if (userEmail < 0) {
     return response.status(400).json({ error: 'Project Not Found' })
   }
 
@@ -39,7 +39,7 @@ app.put('/register/:id', (request, response) => {
     gender,
   };
 
-  users[userIndex] = user;
+  users[userEmail] = user;
 
   return response.json(user);
 });
@@ -47,13 +47,13 @@ app.put('/register/:id', (request, response) => {
 app.delete('/register/:id', (request, response) => {
   const { id } = request.params;
 
-  const userIndex = users.findIndex(user => user.id === id);
+  const userEmail = users.findEmail(user => user.email === email);
 
-  if (userIndex < 0) {
+  if (userEmail < 0) {
     return response.status(400).json({ error: 'Project Not Found' })
   }
 
-  users.splice(userIndex, 1);
+  users.splice(userEmail, 1);
 
   return response.status(204).send();
 });
