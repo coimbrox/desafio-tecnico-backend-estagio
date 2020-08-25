@@ -7,44 +7,35 @@ app.use(express.json());
 
 
 //create empty array for store 
-const queue = [];
 const users = [];
 
-// criei a constante user para receber os valores do insomnia e estou fazendo o push dela na memória do array
-app.post('/register', (request, response) => {
+// I created the user constant to receive the insomnia values ​​and I'm pushing it into the array's memory
+app.post('/createUser', (request, response) => {
 
   const { name, email, gender } = request.body;
 
   const user = { id: uuid(), name, email, gender }
 
-  userss.push(user);
+  users.push(user);
 
   return response.json(users);
 });
 
-//buscar no array e fazer alterações no projeto e setando status code
-app.put('/register/:id', (request, response) => {
-  const { id } = request.params;
-  const { name, email, gender } = request.body;
+//search the array and make changes to the project and setting status code
+app.put('/search/:email', (request, response) => {
+  const { email } = request.params;
 
-  const userEmail = user.findEmail(user => user.email === email);
+  const userEmail = users.findIndex(user => user.email === email);
 
   if (userEmail < 0) {
-    return response.status(400).json({ error: 'Project Not Found' })
+    return response.status(400).json({ error: 'Email Not Found' })
   }
 
-  const user = {
-    name,
-    email,
-    gender,
-  };
 
-  users[userEmail] = user;
-
-  return response.json(user);
+  return response.json(users[userEmail]);
 });
 
-app.delete('/register/:id', (request, response) => {
+app.delete('/delete/:email', (request, response) => {
   const { id } = request.params;
 
   const userEmail = users.findEmail(user => user.email === email);
@@ -61,3 +52,11 @@ app.delete('/register/:id', (request, response) => {
 app.listen(3333, () => {
   console.log('Back-end Iniciado');
 });
+
+// queue
+
+const queue = [];
+
+function AddQueue() {
+
+}
