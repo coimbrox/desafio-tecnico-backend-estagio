@@ -36,13 +36,9 @@ app.put('/search/:email', (request, response) => {
 });
 
 app.delete('/delete/:email', (request, response) => {
-  const { id } = request.params;
+  const { email } = request.params;
 
-  const userEmail = users.findEmail(user => user.email === email);
-
-  if (userEmail < 0) {
-    return response.status(400).json({ error: 'Project Not Found' })
-  }
+  const userEmail = users.findIndex(user => user.email === email);
 
   users.splice(userEmail, 1);
 
