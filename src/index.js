@@ -53,6 +53,7 @@ app.listen(3333, () => {
 
 const queue = [];
 
+// route for add to queue
 app.post('/addToLine/:email', (request, response) => {
   const { email } = request.params;
 
@@ -68,6 +69,16 @@ app.post('/addToLine/:email', (request, response) => {
 
 });
 
-function AddQueue() {
+// route for return position 
+app.get('/findPosition/:email', (request, response) => {
+  const { email } = request.params;
 
-}
+  const userEmail = users.findIndex(user => user.email === email);
+
+  if (userEmail < 0) {
+    return response.status(400).json({ error: 'Email Not Found' })
+  }
+
+  return response.json({ position: userEmail + 1 });
+
+});
