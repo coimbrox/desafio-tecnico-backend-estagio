@@ -103,3 +103,14 @@ app.get('/filterLine', (request, response) => {
 
   return response.json(filterGender);
 });
+
+app.delete('/popLine', (request, response) => {
+  console.log(queue);
+
+  const deleteUser = queue.shift();
+
+  console.log(deleteUser);
+  return response.json(deleteUser);
+
+
+});
