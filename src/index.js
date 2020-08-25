@@ -1,4 +1,5 @@
 const express = require('express');
+import { celebrate, Segments, Joi } from 'celebrate';
 const { uuid, isUuid } = require('uuidv4');
 
 const app = express();
@@ -10,14 +11,19 @@ app.use(express.json());
 const users = [];
 
 // I created the user constant to receive the insomnia values ​​and I'm pushing it into the array's memory
-app.post('/createUser', (request, response) => {
+app.post('/createUser', celebrate({
+  [Segments.BODY]: Joi.object().keys({
+    name: Joi.string().required(),
+    email: Joi.string().email().trim().required(),
+    gender: Joi.string().required(),
+  }),
+}), (request, response) => {
 
   const { name, email, gender } = request.body;
 
   const user = { id: uuid(), name, email, gender }
 
   users.push(user);
-
   return response.json(users);
 });
 
