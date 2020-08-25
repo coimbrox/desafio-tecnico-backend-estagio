@@ -94,3 +94,12 @@ app.get('/showLine', (request, response) => {
 
   return response.json(userEmail);
 });
+
+// gender filter list
+app.get('/filterLine', (request, response) => {
+  const { gender } = request.body;
+
+  const filterGender = users.filter(user => user.gender === gender);
+
+  return response.json(filterGender);
+});
