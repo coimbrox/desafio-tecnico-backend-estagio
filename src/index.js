@@ -82,3 +82,15 @@ app.get('/findPosition/:email', (request, response) => {
   return response.json({ position: userEmail + 1 });
 
 });
+
+// user list 
+app.get('/showLine', (request, response) => {
+  const { email } = request.params;
+
+  const userEmail = users.map((user, position) => ({
+    position: position + 1,
+    user: user
+  }));
+
+  return response.json(userEmail);
+});
