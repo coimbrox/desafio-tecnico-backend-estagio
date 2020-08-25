@@ -53,6 +53,21 @@ app.listen(3333, () => {
 
 const queue = [];
 
+app.post('/addToLine/:email', (request, response) => {
+  const { email } = request.params;
+
+  const userEmail = users.findIndex(user => user.email === email);
+
+  if (userEmail < 0) {
+    return response.status(400).json({ error: 'Email Not Found' })
+  }
+
+
+  const UserAdd = queue.push(users[userEmail]);
+  return response.json({ queue });
+
+});
+
 function AddQueue() {
 
 }
